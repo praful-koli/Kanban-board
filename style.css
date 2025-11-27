@@ -10,8 +10,7 @@ html, body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.5;
   scroll-behavior: smooth;
-  background-color: #f9fafb;
-  color: #111827;
+ 
 }
 
 a {
@@ -21,31 +20,36 @@ a {
 
 :root {
   /* Background color*/
-  --bg-primary-color: #1e1d1d;
- 
+  --bg-primary-color: #000000;
+  --bg-task-color :#111111f0;
    
   /* button */
-  --bg-button-color :#35353512;
+  --bg-button-color :#212121f0;
   --bg-delete-color : rgb(168, 60, 60);
+  --bg-delete-dark-color : rgb(118, 31, 31);
   /* text color*/
   --text-primary-color: hsl(210, 100%, 99%);
 
   /* font family*/
   --font-family: "Consolas", "Courier New", monospace;
 
+  /* border color */
+  --colum-primary-color: #383838;
+
   /* spacing var*/
   --space-xs: 4px;
   --space-sm: 8px;
   --space-md: 16px;
+  --space-lmd:18px;
   --space-lg: 24px;
   --space-xl: 32px;
   --space-2xl: 40px;
   --space-3xl: 48px;
   --space-4xl: 55px;
+  --space-5xl: 75px;
+  
 
-  /* border color */
-  --border-primary-color: #383838;
-
+  
   /* border reduis */
   --border-radius-xs: 4px;
   --border-radius-sm: 8px;
@@ -60,27 +64,93 @@ a {
 main {
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
     color: var(--text-primary-color);
     background-color: var(--bg-primary-color);
-
 }
 
 main .nav{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: var(--space-xl) var(--space-3xl);
+    justify-content: space-between;
+    padding: var(--space-lg) var(--space-3xl);
 }
 
 main .nav .left >h2{
-    font-weight: 500;
+    font-weight: 200;
     
 }
+
 main .nav .right>button {
     padding: var(--space-md) var(--space-md);
-    font-size: 20px;
+    font-size:var(--space-lmd);
     border-radius: var(--border-radius-sm);
-    background-color: var(--border-primary-color);
+    background-color: var(--bg-button-color);
     color: var(--text-primary-color);
     border: none;
+}
+
+
+section {
+  flex-grow: 1;
+  padding: var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+
+  gap: var(--space-2xl);
+}
+
+section .task-colums{
+   background-color: var(--bg-button-color);
+   flex-grow: 1;
+   padding:var(--space-lmd);
+   border-radius: var(--border-radius-sm);
+   display: flex;
+   flex-direction: column;
+   gap: var(--space-md);
+  transition: 0.4s all cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+section .task-colum .hover-over {
+  border : 2px dashed var(--text-primary-color);
+  scale: 1.5;
+}
+
+section .task-colums .heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+section .task-colums .task  {
+   background-color:var(--bg-task-color);
+   padding: var(--space-lmd);
+   border-radius: var(--border-radius-md);
+   display: flex;
+   flex-direction: column;
+   cursor: grab;
+}
+section .task-colums .task  > h2{
+  font-weight: 500;
+}
+section .task-colums .task  > p{
+   font-size: 14px;
+}
+
+
+section .task-colums .task > button {
+  align-self: flex-end;
+  padding: var(--space-sm)  var(--space-md);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--bg-delete-color);
+  color: var(--text-primary-color);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+section .task-colums .task > button:active {
+  transform: scale(0.95);
+  background-color:var(--bg-delete-dark-color) ;
 }

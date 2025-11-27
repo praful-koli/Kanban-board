@@ -10,20 +10,42 @@
 
     <main>
          <nav  class="nav">
-             <div class="left"> <h1>Kanban</h1></div>
-             <div class="right"> <button>Add New Task</button></div>
+             <div class="left"> 
+                <h1>Kanban</h1>
+             </div>
+             <div class="right"> 
+                <button>Add New Task</button>
+            </div>
          </nav>
 
-         <section class="sec">
-               <div class="task-colums">
-                 
+         <section  class="board">
+               <div id="to-do" class="task-colums">
+                 <div class="heading">
+                    <div class="left">To Do</div>
+                    <div class="right">Count</div>
+                 </div>
+                 <div draggable="true" class="task">
+                    <h2>Task1</h2>
+                    <p>Desscription for Task 1</p>
+                    <button>Delete</button>
+                 </div>
                </div>
-               <div class="task-colums"></div>
-               <div class="task-colums"></div>
+               <div id="progress" class="task-colums ">
+                <div class="heading">
+                    <div class="left">In Progress</div>
+                    <div class="right">Count</div>
+                 </div>
+               </div>
+               <div id="done" class="task-colums">
+                <div class="heading">
+                    <div class="left">Done</div>
+                    <div class="right">Count</div>
+                 </div>
+               </div>
          </section>
     </main>
     
-
+  <!-- 38:25 -->
     <script src="app.js"></script>
 </body>
 </html>
