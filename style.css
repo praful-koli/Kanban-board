@@ -21,7 +21,7 @@ a {
 :root {
   /* Background color*/
   --bg-primary-color: #000000;
-  --bg-task-color :#111111f0;
+  --bg-task-color :#111111;
    
   /* button */
   --bg-button-color :#212121f0;
@@ -111,9 +111,9 @@ section .task-colums{
    gap: var(--space-md);
   transition: 0.4s all cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
-section .task-colum .hover-over {
+.hover-over {
   border : 2px dashed var(--text-primary-color);
-  scale: 1.5;
+  scale: 1.05;
 }
 
 section .task-colums .heading {
