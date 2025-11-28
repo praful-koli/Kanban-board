@@ -11,8 +11,6 @@ tasks.forEach((task , idx) => {
     })
 })
 
-
-
 function addDragEventsOnColumn(column) {
     // console.log(column)
     column.addEventListener('dragenter' , (evt)=> {
