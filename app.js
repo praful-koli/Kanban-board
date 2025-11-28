@@ -37,6 +37,7 @@ function addDragEventsOnColumn(column) {
 taskColums.forEach((taskCol) => {
    const el = document.getElementById(taskCol.id);
     if (el) addDragEventsOnColumn(el);
+    
 })
 
 
