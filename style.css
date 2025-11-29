@@ -89,6 +89,7 @@ main .nav .right>button {
     background-color: var(--bg-button-color);
     color: var(--text-primary-color);
     border: none;
+    cursor: pointer;
 }
 
 
