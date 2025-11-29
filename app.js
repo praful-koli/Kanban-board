@@ -8,11 +8,30 @@ const modal = document.querySelector(".modal");
 const modalBg = document.querySelector(".modal .bg");
 const addTaskButton = document.querySelector(".add-task-btn");
 let dragElement = null;
+let taskData = {};
+ 
+function renderTaks() {
+    if (localStorage.getItem('tasks')) {
+    const data = JSON.parse(localStorage.getItem('tasks'));
+    
+    for(col in data) {
+         const column = document.querySelector(`#${col}`)
+        data[col].forEach( task => {
+            console.log(`task  : ${task.title}`)
+            createTask(task.title,task.desc, column);
+        })
+    }
+}
+}
+
+
+
+renderTaks()
 
 tasks.forEach((task, idx) => {
   task.addEventListener("dragstart", (evt) => {
     dragElement = task;
-    console.log(task)
+    
   });
 });
 
@@ -36,6 +55,7 @@ function addDragEventsOnColumn(column) {
     evt.preventDefault();
     column.appendChild(dragElement)
     column.classList.remove("hover-over");
+     saveAndCountTasks()
   });
 }
 
@@ -55,29 +75,69 @@ modalBg.addEventListener("click", (evt) => {
 addTaskButton.addEventListener("click", (evt) => {
   const taskTitel = document.querySelector("#new-task-title").value;
   const taskDec = document.querySelector("#new-decription-title").value;
-  const prevTask = document.querySelector('.task');
-  
-  const div = document.createElement('div');
 
-   
+    createTask(taskTitel, taskDec, todo);
+    saveAndCountTasks();
+     document.querySelector("#new-task-title").value = ''
+     document.querySelector("#new-decription-title").value = 'a'
+    modal.classList.toggle("active");   
+});
+
+//save & count logic
+ function saveAndCountTasks() {
+    taskColums.forEach((col, idx)=> {
+        const tasks = col.querySelectorAll('.task');
+        let count = col.querySelector('.heading .right')
+       
+
+        taskData[col.id] = [...tasks].map( t =>
+         {
+             return {
+                title : t.querySelector('h2').innerText,
+                desc : t.querySelector('p').innerText,
+             }
+        })
+
+         localStorage.setItem('tasks',JSON.stringify(taskData));
+
+         count.textContent = `Count : ${tasks.length}`;
+    })
+  }
+  saveAndCountTasks()
+
+
+//  createing task element ;
+
+function createTask(title, desc , column) {
+  const div = document.createElement('div'); 
   div.setAttribute('draggable',true);
   div.classList.add('task');
 
 
   div.innerHTML = `
-               <h2>${taskTitel}</h2>
-               <p>${taskDec}</p>
-               <button>Delete</button>
+               <h2>${title}</h2>
+               <p>${desc}</p>
+               <button class="task-delete-btn">Delete</button>
                `;
+   
+    column.appendChild(div);
 
-    todo.appendChild(div)
-    console.log(div);
-    
-    modal.classList.toggle("active");
-
+     // Drag logic
     div.addEventListener("dragstart", (evt) => {
-    dragElement = div;
-  });
-});
+       dragElement = div;
+    });
+
+    //Delete button logic
+      const deleteBtn = div.querySelector('.task-delete-btn');
+      deleteBtn.addEventListener('click', (evt)=> {
+        if (confirm("Are you sure you want to delete this task?")) {
+              div.remove();
+              saveAndCountTasks();
+        }
+      })
+
+    return div;
+}
 
 
+  
