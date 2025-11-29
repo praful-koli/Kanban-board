@@ -95,6 +95,7 @@ main .nav .right>button {
 
 section {
   flex-grow: 1;
+  height: 80vh;
   padding: var(--space-lg);
   display: flex;
   justify-content: space-between;
@@ -103,14 +104,21 @@ section {
 }
 
 section .task-colums{
+   overflow-y: scroll;
    background-color: var(--bg-button-color);
    flex-grow: 1;
+   width: 100%;
+   
    padding:var(--space-lmd);
    border-radius: var(--border-radius-sm);
    display: flex;
    flex-direction: column;
    gap: var(--space-md);
   transition: 0.4s all cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+section .task-colums::-webkit-scrollbar {
+    display: none;
 }
 .hover-over {
   border : 2px dashed var(--text-primary-color);

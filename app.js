@@ -75,11 +75,13 @@ modalBg.addEventListener("click", (evt) => {
 addTaskButton.addEventListener("click", (evt) => {
   const taskTitel = document.querySelector("#new-task-title").value;
   const taskDec = document.querySelector("#new-decription-title").value;
-
+    
+  //create task element
     createTask(taskTitel, taskDec, todo);
+    //save task in localstorage and count task
     saveAndCountTasks();
      document.querySelector("#new-task-title").value = ''
-     document.querySelector("#new-decription-title").value = 'a'
+     document.querySelector("#new-decription-title").value = ''
     modal.classList.toggle("active");   
 });
 
