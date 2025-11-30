@@ -1,3 +1,5 @@
+
+<img width="1536" height="1024" alt="ChatGPT Image Nov 30, 2025, 01_43_51 PM" src="https://github.com/user-attachments/assets/794e5475-076b-4c97-bca7-aa781021a227" />
 🎹 Virtual Piano — Play Music Using Your Keyboard
 
 A beautiful and interactive Virtual Piano Web App built using HTML, CSS, and JavaScript, allowing users to play realistic piano notes using mouse clicks and keyboard keys.
@@ -85,3 +87,4 @@ If you like it:
 ✔️ Star the repo ⭐
 ✔️ Share it
 ✔️ Add it to your portfolio
+
