@@ -1,99 +1,87 @@
+🎹 Virtual Piano — Play Music Using Your Keyboard
 
-Kanban Board – Drag & Drop Task Manager
+A beautiful and interactive Virtual Piano Web App built using HTML, CSS, and JavaScript, allowing users to play realistic piano notes using mouse clicks and keyboard keys.
 
-A simple and clean Kanban Board web application where you can manage tasks visually.
-This project supports drag & drop, task counting, localStorage saving, deleting tasks, and is fully deployed on Vercel.
+🔗 Live Demo 👉 [https://kanban-board-xi-nine.vercel.app/]
 
-🚀 Live Demo
+🚀 Features
+🎼 Keyboard → Note Mapping
 
-👉 https://kanban-board-…vercel.app
+Full keyboard-to-note mapping
 
-(Replace with your actual deployed link)
+A clean popup card shows all mapping before starting
 
-📌 Features
-🟦 Drag & Drop
+No scrolling — single card layout
 
-Move tasks between To Do → In Progress → Done using native drag & drop.
+🎹 Realistic Piano UI
 
-📊 Task Counter
+White + Black keys
 
-Every column shows the number of tasks inside it.
+Smooth animations
 
-Count updates instantly after adding, deleting, or dragging tasks.
+Clean visual layout
 
-💾 LocalStorage Support
+🔊 Audio Features
 
-All tasks are automatically stored in the browser.
+Realistic piano note sound
 
-Refreshing the page will NOT delete your tasks.
+Low-latency playback
 
-🗑 Delete Task
+🖱️ Dual Interaction
 
-Each task contains a Delete button to remove it permanently.
+Play with keyboard OR mouse
 
-➕ Add New Task
+⚡ Responsive
 
-Add title & description using a modal popup.
+Perfect for laptop & desktop
 
-New tasks go to the To Do column by default.
+📸 Screenshots
+🔑 Keyboard-to-Note Mapping (Popup Screen)
 
-🌐 Fast Deployment (Vercel)
+🎹 Piano Interface
 
-Zero-config deployment.
+🎯 How It Works
 
-Hosted and accessible online.
+Open the app
 
-🛠 Tech Stack
+Mapping popup shows all keyboard note bindings
 
-HTML5
+Click Start Playing
 
-CSS3
+Piano activates
 
-JavaScript (Vanilla)
+Use keyboard or mouse to play
 
-LocalStorage API
+Enjoy music! 🎶
 
-Vercel Deployment
-
-📁 Project Structure
-/
+📂 Project Structure
+📁 piano-project
 │── index.html
 │── style.css
 │── script.js
-│── README.md
-└── assets/
 
-⚙️ How to Run Locally
+├── sounds/
+│   ├── C.mp3
+│   ├── D.mp3
+│   ├── E.mp3
+│   ├── F.mp3
+│   ├── ...all notes
 
-Clone this repository:
+├── screenshots/
+│   ├── mapping-screen.png
+│   └── piano-ui.png
 
-git clone https://github.com/your-username/kanban-board.git
+└── README.md
 
+💡 Author
+Praful Koli
+🎵 Passionate about building interactive web apps
+💻 Loves JavaScript, UI design & audio-based projects
 
-Navigate into the folder:
+⭐ Support the Project
 
-cd kanban-board
+If you like it:
 
-
-Open the project:
-
-open index.html
-
-
-No server setup required.
-
-🧠 How Drag & Drop Works
-
-Each task card uses draggable="true".
-
-dragstart event stores the selected task.
-
-dragover allows dropping into a column.
-
-drop event inserts the task inside the new column.
-
-After each drop:
-
-localStorage is updated
-
-task count is recalculated
+✔️ Star the repo ⭐
+✔️ Share it
+✔️ Add it to your portfolio
