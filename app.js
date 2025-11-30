@@ -10,6 +10,8 @@ const addTaskButton = document.querySelector(".add-task-btn");
 let dragElement = null;
 let taskData = {};
  
+
+//initial task rendeing 
 function renderTaks() {
     if (localStorage.getItem('tasks')) {
     const data = JSON.parse(localStorage.getItem('tasks'));
@@ -23,8 +25,6 @@ function renderTaks() {
     }
 }
 }
-
-
 
 renderTaks()
 
@@ -105,11 +105,9 @@ addTaskButton.addEventListener("click", (evt) => {
          count.textContent = `Count : ${tasks.length}`;
     })
   }
-  saveAndCountTasks()
-
+  saveAndCountTasks();
 
 //  createing task element ;
-
 function createTask(title, desc , column) {
   const div = document.createElement('div'); 
   div.setAttribute('draggable',true);
