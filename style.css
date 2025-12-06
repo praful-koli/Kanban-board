@@ -99,7 +99,6 @@ section {
   padding: var(--space-lg);
   display: flex;
   justify-content: space-between;
-
   gap: var(--space-2xl);
 }
 
@@ -108,7 +107,6 @@ section .task-colums{
    background-color: var(--bg-button-color);
    flex-grow: 1;
    width: 100%;
-   
    padding:var(--space-lmd);
    border-radius: var(--border-radius-sm);
    display: flex;
